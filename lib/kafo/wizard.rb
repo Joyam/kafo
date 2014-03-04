@@ -54,6 +54,9 @@ END
           menu.choice HighLine.color('Cancel run without Saving', :cancel) do
             say("Bye!"); exit 0
           end
+          if menu.to_ary.length < 10
+            menu.character = true
+          end
         end
       end
     end
