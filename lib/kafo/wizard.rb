@@ -81,6 +81,7 @@ END
               menu.choice("Configure #{group.formatted_name}") { configure_group(group) }
             end
           end
+          menu.hidden(".") { go_back = true }
           menu.choice("Back to main menu") { go_back = true }
         end
       end
@@ -97,7 +98,7 @@ END
           group.children.each do |subgroup|
             menu.choice("Configure #{subgroup.formatted_name}") { configure_group(subgroup) }
           end
-
+          menu.hidden(".") { go_back = true }
           menu.choice("Back to parent menu") { go_back = true }
         end
       end
